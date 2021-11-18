@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+}
+
+.tabs {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    font-weight: bolder;
+    display: flex;
+    justify-content: start;
+}
+
+.tabs .tab-link {
+    border: none;
+    outline: none;
+    padding: 1rem 1.5rem;
+    transition: all .2s;
+}
+
+.tabs .tab-link:hover {
+    background-color: #dfdfdf;
+}
+
+.tabs .active,
+.tabs .active:hover {
+    background-color: #ccc;
+}
+
+.contents .tab-content {
+    display: none;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ccc;
+    animation: fadeEffect 1s;
+}
+
+.contents .active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

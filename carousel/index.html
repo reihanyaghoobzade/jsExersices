@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carousel</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="carousel">
+            <div class="number">1 / 4</div>
+            <img class="img" src="images/img-01.jpg" alt="">
+            <div class="caption">Caption 1</div>
+        </div>
+
+        <div class="carousel">
+            <div class="number">2 / 4</div>
+            <img src="images/img-02.jpg" alt="">
+            <div class="caption">Caption 2</div>
+        </div>
+
+        <div class="carousel">
+            <div class="number">3 / 4</div>
+            <img src="images/img-03.jpg" alt="">
+            <div class="caption">Caption 3</div>
+        </div>
+
+        <div class="carousel">
+            <div class="number">4 / 4</div>
+            <img src="images/img-04.jpg" alt="">
+            <div class="caption">Caption 4</div>
+        </div>
+
+        <div class="prev" onclick="plus(-1)">&#10094;</div>
+        <div class="next" onclick="plus(1)">&#10095;</div>
+    </div>
+
+    <div class="dot-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

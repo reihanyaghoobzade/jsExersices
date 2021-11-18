@@ -7,6 +7,8 @@
     font-size: 1.5rem;
     text-align: left;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
 
 .accordion:hover,
@@ -19,7 +21,6 @@
     color: black;
     font-size: 1.5rem;
     font-weight: bold;
-    float: right;
     margin-right: 1rem;
 }
 
@@ -28,29 +29,17 @@
     color: black;
     font-size: 1.5rem;
     font-weight: bold;
-    float: right;
     margin-right: 1rem;
 }
 
-
-/* slide dowm*/
-
 .content {
-    padding: 0 1rem;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
+    transition: height .2s ease-in-out;
 }
 
-.active~.content {
-    overflow: hidden;
-    transition: .5s ease-in-out;
-}
-
-
-/*normal*/
-
-
-/* .content {
+.active+.content {
     padding: 1rem;
-    display: none;
-} */
+    height: 100px;
+    display: block;
+}

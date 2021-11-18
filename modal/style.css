@@ -1,3 +1,12 @@
+.modal-container {
+    position: fixed;
+    width: 80%;
+    top: 10%;
+    right: 10%;
+    background-color: white;
+    border: 2px solid rgb(199, 62, 233);
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -9,13 +18,8 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-container {
-    position: fixed;
-    width: 80%;
-    top: 10%;
-    right: 10%;
-    background-color: white;
-    border: 2px solid rgb(199, 62, 233);
+.active {
+    display: block;
 }
 
 .modal-header,

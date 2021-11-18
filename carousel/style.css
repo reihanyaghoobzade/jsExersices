@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    animation: fade 1s;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.caption {
+    text-align: center;
+    width: 100%;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    transition: .4s;
+}
+
+.caption:hover {
+    font-size: 1.2rem;
+}
+
+.prev,
+.next {
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+    width: auto;
+    top: 50%;
+    margin-top: -1.5rem;
+    border-radius: 0 5px 5px 0;
+    transition: .4s;
+}
+
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dot-container {
+    text-align: center;
+}
+
+.dot {
+    width: .5rem;
+    height: .5rem;
+    margin: 1rem 2px;
+    display: inline-block;
+    background-color: #bbb;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.active-dot {
+    background-color: #717171;
+}
+
+@keyframes fade {
+    from {
+        opacity: .1;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,53 +1,17 @@
-//with anonymous functions and "this" :
+const accordion = document.querySelectorAll(".accordion");
 
-let accordion = document.getElementsByClassName("accordion");
+accordion.forEach(function(item) {
 
-for (let i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
+    item.addEventListener("click", function() {
+
+        if (this.classList.contains("active")) {
+            this.classList.remove("active");
         } else {
-            content.style.display = "block";
+            accordion.forEach(function(acc) {
+                acc.classList.remove("active");
+            });
         }
+
+        this.classList.add("active");
     });
-}
-
-
-
-//slide down
-
-let accordion = document.getElementsByClassName("accordion");
-
-for (let i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener("click", () => {
-        accordion[i].classList.toggle("active");
-        let content = accordion[i].nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-            content.style.padding = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-            content.style.padding = "16px";
-        }
-    });
-}
-
-
-
-//with arrow functions and without "this":
-
-/*let accordion = document.getElementsByClassName("accordion");
-
-for (let i = 0; i < accordion.length; i++) {
-    accordion[i].addEventListener("click", () => {
-        accordion[i].classList.toggle("active");
-        let content = accordion[i].nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
-}*/
+});

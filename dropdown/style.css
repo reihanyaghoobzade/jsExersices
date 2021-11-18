@@ -1,7 +1,7 @@
 .dropdown {
     display: inline-block;
     position: relative;
-    width: 10%;
+    width: 15%;
     background-color: rgb(41, 172, 41);
     padding: 1.5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -10,13 +10,17 @@
     text-align: center;
 }
 
-.drop-menu {
+#drop-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: rgb(209, 208, 207);
     width: 100%;
+}
+
+.active {
+    display: block !important;
 }
 
 .drop-item {
