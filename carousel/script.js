@@ -1,13 +1,17 @@
 const carousel = document.querySelectorAll(".carousel");
 const dot = document.querySelectorAll(".dot");
-const prev = document.querySelectorAll(".prev");
-const next = document.querySelectorAll(".next");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
 
 let index = 1;
 show(index);
 
-// prev.addEventListener("click", plus(-1));
-// next.addEventListener("click", plus(1));
+prev.addEventListener("click", function() {
+    plus(-1);
+});
+next.addEventListener("click", function() {
+    plus(1);
+});
 
 // prev.onclick = plus(-1);
 // next.onclick = plus(1);
@@ -20,6 +24,7 @@ for (let i = 0; i < dot.length; i++) {
 
 function plus(num) {
     show(index += num);
+    console.log(1);
 }
 
 function current(num) {

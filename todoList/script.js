@@ -40,7 +40,7 @@ function main() {
     });
 
     addTodo.addEventListener("keydown", (event) => {
-        if (event.key == "Enter") {
+        if (event.key == "X") {
             addTodoBtn.click();
         }
     });
@@ -63,7 +63,7 @@ function main() {
             card.remove();
         });
         removeMultiTodos(deleteIndexes);
-    })
+    });
 
     ul.addEventListener("dragover", (event) => {
         if (
@@ -140,25 +140,35 @@ function makeTodoElement(todos) {
 
         clearBtn.addEventListener("click", () => {
             const currentCard = clearBtn.parentElement;
-            const indexOfCurrentCard = [...document.querySelectorAll(".todos .card")].indexOf(currentCard);
+            const indexOfCurrentCard = [
+                ...document.querySelectorAll(".todos .card"),
+            ].indexOf(currentCard);
             currentCard.classList.add("fall");
             removeTodo(indexOfCurrentCard);
-
             setTimeout(() => {
                 currentCard.remove();
+                todosNumber.innerHTML = document.querySelectorAll(
+                    ".todos .card:not(.checked)"
+                ).length;
             }, 200);
         });
 
         cbInput.addEventListener("click", () => {
             const currentCard = cbInput.parentElement.parentElement;
             const checked = cbInput.checked;
-            const indexOfCurrentCard = [...document.querySelectorAll(".todos .card")].indexOf(currentCard);
+            const indexOfCurrentCard = [
+                ...document.querySelectorAll(".todos .card"),
+            ].indexOf(currentCard);
             stateTodo(indexOfCurrentCard, checked);
-            checked ? currentCard.classList.add("checked") : currentCard.classList.remove("checked");
+            checked
+                ?
+                currentCard.classList.add("checked") :
+                currentCard.classList.remove("checked");
 
-            todosNumber.innerHTML = document.querySelectorAll(".todos .card:not(.checked)").length;
+            todosNumber.innerHTML = document.querySelectorAll(
+                ".todos .card:not(.checked)"
+            ).length;
         });
-
 
         if (todoElement.isCompleted) {
             cbInput.checked = true;
@@ -166,10 +176,10 @@ function makeTodoElement(todos) {
         }
     });
 
-    todosNumber.innerHTML = document.querySelectorAll(".todos .card:not(.checked)").length;
-
+    todosNumber.innerHTML = document.querySelectorAll(
+        ".todos .card:not(.checked)"
+    ).length;
 }
-
 
 function removeTodo(index) {
     const todos = JSON.parse(localStorage.getItem("todos"));

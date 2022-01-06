@@ -3,7 +3,7 @@
     --base-font: 1.6rem;
     --fw-normal: 400;
     --fw-bold: 700;
-    --img-bg: url("../images/bg-desktop-dark.jpg");
+    --img-bg: url("images/bg-desktop-dark.jpg");
     --clr-primary: hsl(0, 0%, 98%);
     --clr-white: hsl(0, 0%, 100%);
     --clr-page-bg: hsl(235, 21%, 11%);
@@ -24,7 +24,7 @@
 /* CHANGE CUSTOM PROPERTIES WHEN LIGHT THEME */
 
 body.light {
-    --img-bg: url("../images/bg-desktop-light.jpg");
+    --img-bg: url("images/bg-desktop-light.jpg");
     --clr-primary: hsl(243, 12%, 30%);
     --clr-page-bg: hsl(0, 0%, 98%);
     --clr-card-bg: hsl(0, 0%, 100%);
@@ -160,7 +160,7 @@ header.card h1 {
 /* CHECKED CARD */
 
 .card .cb-container .cb-input:checked+.check {
-    background: url("../images/icon-check.svg"), linear-gradient(45deg, var(--clr-green), var(--clr-pink));
+    background: url("images/icon-check.svg"), linear-gradient(45deg, var(--clr-green), var(--clr-pink));
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -337,10 +337,7 @@ footer {
 .todos.active .card.checked,
 .todos.completed .card {
     transition: 0.4s;
-    opacity: 0;
-    padding: 0;
-    border: 0;
-    height: 0;
+    display: none;
     pointer-events: none;
 }
 

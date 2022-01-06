@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Permanent Marker", cursive;
+    background: #0f8ec01c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.info-container {
+    width: 600px;
+    height: 500px;
+    padding: 40px;
+    background: #cfe9f2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-container .inputs {
+    position: relative;
+}
+
+.info-container h1 {
+    margin: 0 0 50px;
+    padding: 0;
+    color: #0169bf;
+    font-size: 40px !important;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inputs input {
+    width: 40%;
+    padding: 10px 0;
+    font-size: 22px;
+    color: #0f8fc0;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #0f8ec0a9;
+    outline: none;
+    background: transparent;
+    transition: .5s;
+}
+
+.inputs input:focus {
+    border-bottom: 1px solid #0169bf;
+}
+
+.inputs label {
+    position: absolute;
+    top: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #0f8ec0a9;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputs .first-name,
+.inputs .second-name {
+    left: 5%;
+}
+
+.inputs .first-sign,
+.inputs .second-sign {
+    right: 38%;
+}
+
+.inputs .first-sign,
+.inputs .second-sign {
+    right: 38%;
+}
+
+.inputs .first-player:focus~.first-name,
+.inputs .second-player:focus~.second-name,
+.inputs .first-player-sign:focus~.first-sign,
+.inputs .second-player-sign:focus~.second-sign,
+.inputs .first-player:valid~.first-name,
+.inputs .second-player:valid~.second-name,
+.inputs .first-player-sign:valid~.first-sign,
+.inputs .second-player-sign:valid~.second-sign {
+    top: -20px;
+    color: #0169bf;
+    font-size: 14px;
+}
+
+
+/* .play-round {
+    position: relative;
+    width: 80%;
+    margin: .5rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.play-round div {
+    font-size: 18px;
+    color: #0169bf;
+}
+
+.play-round select {
+    font-family: "Permanent Marker", cursive;
+    font-weight: bolder;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #0f8fc0;
+    background: transparent;
+    color: #0169bf;
+} */
+
+.start-btn {
+    position: relative;
+    display: inline-block;
+    padding: 10px 100px;
+    color: #0f8fc0;
+    background-color: transparent;
+    font-family: "Permanent Marker", cursive;
+    font-size: 18px;
+    transition: .3s;
+    margin-top: 30px;
+    letter-spacing: 4px;
+    border: 1px solid #0f8fc0;
+    border-radius: 10px;
+}
+
+.start-btn:hover {
+    background: #0f8fc0;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #0f8fc0, 0 0 25px #0f8fc0, 0 0 100px #0f8fc0;
+}
+
+.scores-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.scores-container div {
+    position: relative;
+    display: inline-block;
+}
+
+.scores-container input {
+    height: 2rem;
+    line-height: 2rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #0f8fc0;
+    pointer-events: none;
+}
+
+.scores-container label {
+    position: absolute;
+    left: 10px;
+    color: #0169bf;
+}
+
+.scores-container span {
+    position: absolute;
+    right: 10px;
+    color: #0169bf;
+}
+
+.cell-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 360px;
+    margin: 6rem auto;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    font-size: 50px;
+    color: #0f8fc0;
+    border: 1px solid #0f8fc0;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 120px;
+}
+
+.player-turn {
+    color: #49d26a;
+    font-size: 40px !important;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons .refresh {
+    font-family: "Permanent Marker", cursive;
+    font-size: medium;
+    width: 100px;
+    height: 30px;
+    background-color: #fff;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 6px;
+    transition: .2s;
+}
+
+.buttons .refresh:hover {
+    background: #ffd700;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ffd700, 0 0 25px #ffd700;
+}
+
+.buttons .reset {
+    font-family: "Permanent Marker", cursive;
+    font-size: medium;
+    width: 100px;
+    height: 30px;
+    background-color: #fff;
+    color: #ff4600;
+    border: 2px solid #ff4600;
+    border-radius: 6px;
+    transition: .2s;
+}
+
+.buttons .reset:hover {
+    background: #ff4600;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ff4600, 0 0 25px #ff4600;
+}
+
+.buttons .finish {
+    font-family: "Permanent Marker", cursive;
+    font-size: medium;
+    width: 100px;
+    height: 30px;
+    background-color: #fff;
+    color: #ff1f46;
+    border: 2px solid #ff1f46;
+    border-radius: 6px;
+    transition: .2s;
+}
+
+.buttons .finish:hover {
+    background: #ff1f46;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #ff1f46, 0 0 25px #ff1f46;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-container {
+    position: fixed;
+    width: 40%;
+    background-color: white;
+    border: 2px solid #cfe9f2;
+    border-radius: 10px;
+}
+
+.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-header,
+.modal-footer {
+    background-color: #cfe9f2;
+    color: #0169bf;
+    padding: 2rem;
+    font-size: x-large;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close {
+    font-size: 35px;
+    font-weight: bolder;
+    color: #0169bf;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 2rem;
+    color: #0169bf;
+}
+
+.modal-footer {
+    justify-content: flex-end;
+}
+
+.modal-footer .continue {
+    font-family: "Permanent Marker", cursive;
+    font-size: medium;
+    padding: .25rem 1.5rem;
+    border: 2px solid #0f8fc0;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #0169bf;
+    transition: .2s;
+}
+
+.modal-footer .continue:hover {
+    background: #0f8fc0;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 0 5px #0f8fc0, 0 0 25px #0f8fc0;
+}

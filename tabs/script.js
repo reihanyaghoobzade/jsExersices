@@ -16,5 +16,6 @@ for (let i = 0; i < tabs.length; i++) {
             }
         });
         content[i].classList.add("active");
+
     });
 }
