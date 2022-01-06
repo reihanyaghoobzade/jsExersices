@@ -1,4 +1,4 @@
-const bodytheme = document.querySelector("body");
+const bodyTheme = document.querySelector("body");
 const themeSwitcher = document.querySelector("#theme-switcher");
 const themeImg = themeSwitcher.children[0];
 const addTodoBtn = document.querySelector("#add-btn");
@@ -10,7 +10,7 @@ const clearCompleted = document.querySelector("#clear-completed");
 function main() {
     //set theme switcher
     themeSwitcher.addEventListener("click", () => {
-        bodytheme.classList.toggle("light");
+        bodyTheme.classList.toggle("light");
         themeImg.setAttribute(
             "src",
             themeImg.getAttribute("src") === "images/icon-sun.svg" ?
