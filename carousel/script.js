@@ -13,9 +13,6 @@ next.addEventListener("click", function() {
     plus(1);
 });
 
-// prev.onclick = plus(-1);
-// next.onclick = plus(1);
-
 for (let i = 0; i < dot.length; i++) {
     dot[i].addEventListener("click", () => {
         current(i + 1);
