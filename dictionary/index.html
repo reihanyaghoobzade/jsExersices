@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="w-full h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    /> />
+    <title>Dictionary</title>
+</head>
+
+<body class="bg-[#c6bef7] flex justify-center items-center min-h-full">
+    <div class="container mx-auto">
+        <div class="flex justify-center items-center">
+            <div class="p-24 bg-white rounded-2xl shadow-xl">
+                <div class="flex flex-col items-center justify-center">
+                    <h2 class="inline-block text-[#afa2ff] text-4xl pt-4 font-bold text-center">
+                        Dictionary
+                    </h2>
+                    <div class="pt-12 flex justify-center">
+                        <input type="text" placeholder="Type the word here..." id="word" class="caret-[#afa2ff] focus:outline-none font-sans font-semibold border-b-2 border-[#afa2ff] py-2 mx-4 w-auto" />
+                        <button id="search" class="bg-[#afa2ff] text-white text-xl px-4 py-2 rounded">Search</button>
+                    </div>
+                    <div class="hidden flex-col justify-center items-center pt-12" id="response">
+                        <div class="grid grid-cols-12 gap-4 w-full justify-center items-center">
+                            <div class="col-span-5 py-4 flex flex-col justify-center items-center w-full border-2 border-[#afa2ff] rounded font-semibold">
+                                <h2 class="text-xl text-gray-500 p-2">Part of Speech</h2>
+                                <p class="text-md" id="partOfSpeech"></p>
+                            </div>
+                            <div class="col-span-5 py-4 flex flex-col justify-center items-center w-full border-2 border-[#afa2ff] rounded font-semibold">
+                                <h2 class="text-xl text-gray-500 p-2">Phonetics</h2>
+                                <p class="text-md" id="phonetics"></p>
+                            </div>
+                            <i class="fa-solid fa-volume-up col-span-2 font-black text-3xl text-center text-[#afa2ff] cursor-pointer" id="audio"></i>
+                        </div>
+                        <div class="bg-gray-50 my-6 border-2 border-[#afa2ff] rounded block font-semibold" id="meaning">
+                            <h2 class="text-xl text-gray-500 p-4">Definitions</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
